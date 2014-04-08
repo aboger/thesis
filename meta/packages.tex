@@ -1,0 +1,68 @@
+% Used for the pictures.
+\usepackage{graphicx}
+\usepackage{float}
+
+% Used for the page header line.
+\usepackage{fancyhdr}
+
+% Used for print the currents section name. Provides \currentlabel
+\usepackage{nameref}
+\makeatletter
+\newcommand*{\currentlabel}{\@currentlabelname}
+\makeatother
+
+% Used for hyperlinks.
+\usepackage[linktoc=all]{hyperref}
+
+% Used for acronyms. 
+\usepackage[printonlyused]{acronym}
+
+% Used for source code listings.
+\usepackage{listings}
+% Avoids deprecation warning when using package 'listings'
+\usepackage{scrhack} 
+
+% Used for improved bibliography
+\usepackage[backend=bibtex,sorting=none]{biblatex}
+
+% Used for todo tags, highlighting and and dummy text
+%\usepackage{todonotes}  % Provides \todo{..} (adds to do notes)
+\usepackage{soul}			% Provides \hl (highlight) and provides \ul (underline)
+\usepackage{lipsum}		% Provides \lipsum[1-X] command
+
+% Used for page settings
+\usepackage{geometry}
+
+% Used for drawing TikZ figures
+% See definitions in "tikz/tikz_settings.tex"
+\usepackage{tikz}
+
+% Used to enable inclusion of tikz pictures with standalone document class
+\usepackage{standalone}
+
+% Used to enable centering of verbatim environments
+\usepackage{verbatimbox}
+
+%\begin{verbbox}
+%  some
+%  text
+%  here
+%\end{verbbox}
+%\begin{figure}
+%  \centering
+%  \theverbbox
+%  \caption{I wish this was centered}
+%\end{figure}
+
+% May help to break cites
+\usepackage{breakcites}
+
+% Used for line spacing
+\usepackage{setspace}
+
+% Provides "alltt" environment as a "verbatim" environment alternative. Unlike in "verbatim", in "alltt" TeX commands are execuded.
+\usepackage{alltt}
+
+% For tabularx
+\usepackage{tabularx,ragged2e,booktabs,caption}
+\usepackage{arydshln}

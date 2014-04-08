@@ -1,0 +1,94 @@
+
+\section{Examples}
+
+Some examples\dots
+
+\subsection{A labeled subsection}
+\label{ssec:label}
+
+This is Section \ref{ssec:label} on page \pageref{ssec:label}.
+
+\subsubsection{A subsubsection}
+
+\dots
+
+\subsection{Lists}
+
+\begin{enumerate}
+\item Some
+\item fancy
+\item items!
+\end{enumerate}
+
+\begin{itemize}
+\item Some
+\item fancy
+\item items!
+\end{itemize}
+
+\subsection{Tables}
+
+A table.
+
+\begin{center} 
+\begin{minipage}{\linewidth}
+	\centering 
+	\begin{tabular}{ *4{C{.185\textwidth}}}\toprule[1.5pt]
+		\bf  \# & \bf Some & \bf fancy & \bf titles\\\midrule
+		1 & 5 & 3,582 & 100\% \\
+		2 & Hello & \dots & 50\%\\
+		\bottomrule[1.25pt]
+	\end {tabular}
+	\par
+	\captionof{table}{A table.}
+	\label{tab:table} 
+\end{minipage}
+\end{center}
+
+
+\subsubsection{Acronyms along the example \acs{http}}
+
+First call prints \ac{http}, second call prints \ac{http}. Use \acs{http} in titles.
+
+\subsection{A todo box}
+
+\todo{Buy me a beer!}
+
+\subsection{Citations}
+
+A simple citation~\cite{rfc791}. Citation with page~\cites[p.~12]{rfc2068}. A couple of references~\cites[p.~12;]{rfc2068}{rfc791}.
+
+\citebox{A citation box\dots}{rfc2068}
+
+I recommend to manage your references using the JabRef tool.
+
+After new citations, run: PDFLatex, BibTex, PDFLatex, PDFLatex!
+
+\subsection{Source code}
+
+A Java code listing. Current default language is Java. This can be changed in \textit{settings.tex}.
+
+\lstinputlisting[
+	caption={The \code{Hello} class.},
+	label={lst:Hello}
+]{code/Hello.java}
+
+\subsection{TikZ figures}
+
+\begin{itemize}
+\item Write your figures in a standalone document. See \textit{tikz/example.tex}.
+\item Compile it.
+\item Include the output PDF file.
+\end{itemize}
+
+This enables embedding for your figures into non-\LaTeX{} environments such as a web site. It is possible to include the code of the standalone document into this document, too. Therefore, call \verb#\#\verb#input{tikz/example.tex}#. However, I don't recommend to do this, since this may cause problems due to page width differences and several other reasons.
+
+\begin{figure}[ht]
+	\centering
+	
+	\includegraphics{tikz/example.pdf}
+        
+    \caption{A fancy TikZ figure.}
+    \label{fig5:projectstack}
+\end{figure}
+

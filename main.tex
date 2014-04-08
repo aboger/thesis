@@ -1,0 +1,85 @@
+% If using Texmaker, set this file as master file.
+
+\NeedsTeXFormat{LaTeX2e}
+\documentclass[a4paper, % DIN A 4
+	11pt,	% Text size
+	titlepage, % Has a cover
+%   onside,    % Ignore this option and DON'T use twoside, even if two-sided. See \usepackage[twoside]{geometry} instead!
+    listof=totoc, % Adds Figures/Listings to the table of contents. Acronyms are not included
+    bibliography=totoc, % Adds References to the table of contents
+    index=totoc, % Adds index to the table of contents
+    captions=tableheading, % Positioning of table captions below
+    numbers=noenddot, % removes ending dots in table of contents' section numbers
+	final	% "draft" compiles faster, but ignores e.g. figures. Useful for debugging.
+]{scrartcl}
+
+% If in english, "Capitalize all words in titles of publications and documents, except a, an, the, at, by, for, in, of, on, to, up, and, as, but, it, or, and nor."
+
+\input{meta/packages.tex}
+\input{meta/commands.tex}
+
+\newgeometry{left=\pageoffsetleft,
+	right=\pageoffsetright,
+	top=\pageoffsettop,
+	bottom=\pageoffsetbottom,
+	twoside,
+	includeheadfoot}
+
+\input{meta/settings.tex}
+
+\bibliography{bib/refs}
+
+\begin{document}
+
+% head                  
+\pagenumbering{Roman} 
+\input{head/cover.tex}
+\newpage
+\input{head/licence.tex}
+\newpage
+\input{head/abstract.tex}
+\newpage
+\emptypage
+\tableofcontents
+\newpage
+ 
+% body 
+\pagenumbering{arabic} 
+\input{body/1_introduction.tex}
+\input{body/2_background.tex}
+\input{body/x_examples.tex}
+\input{body/4_conclusion.tex}
+\newpage
+
+% foot
+\pagenumbering{Alph} 
+
+% BEGIN bugfix. Geometry package fails to swap page layout. This is done manually through the following command.
+\newgeometry{left=\pageoffsetright,
+	right=\pageoffsetleft,
+	top=\pageoffsettop,
+	bottom=\pageoffsetbottom,
+	twoside,
+	includeheadfoot}
+% END bugfix
+
+\newpage
+\printbibliography
+\newpage
+\listoffigures
+\newpage
+\lstlistoflistings
+\newpage
+\listoftables
+\newpage
+\input{foot/acronym.tex}
+\input{foot/affirmation.tex}
+\newpage 
+\begin{appendix}
+\phantomsection
+\addcontentsline{toc}{section}{Appendix}
+\section*{Appendix}
+\input{foot/0_first_appendix.tex}
+\end{appendix}
+
+\end{document}

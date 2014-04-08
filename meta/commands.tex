@@ -1,0 +1,52 @@
+
+\newcommand{\docauthor}{Author}
+\newcommand{\docsupervisor}{Supervisor}
+\newcommand{\docassessor}{Assessor}
+\newcommand{\authormail}{\url{author@university.com}}
+\newcommand{\country}{Germany}
+\newcommand{\university}{University of Ulm}
+\newcommand{\institute}{Institute of Distributed Systems}
+\newcommand{\faculty}{Faculty of Engineering and Computer Science}
+\newcommand{\doctitle}{The title}
+\newcommand{\docsubtitle}{The subtitle}
+\newcommand{\dockeywords}{Some, key, words, for, PDF, meta, information}
+\newcommand{\docID}{Document ID}
+
+\newcommand{\etal}{et al.\ }
+
+\newcommand{\code}[1]{\texttt{#1}}
+%\newcommand{\cmd}[1]{\textit{#1}}
+\newcommand{\new}[1]{\textit{#1}}
+
+\newcommand{\emptypage}{\newpage\null\thispagestyle{empty}\newpage}		% Inserts an emtpy page
+
+\newcommand{\pageoffsettop}{1.5cm}
+\newcommand{\pageoffsetleft}{3.75cm}
+\newcommand{\pageoffsetright}{1.75cm}
+\newcommand{\pageoffsetbottom}{1.5cm}
+
+\newcommand{\citebox}[2]{ % Inserts a citation box
+	\begin{center}
+			\colorbox{gray!10}{
+				\parbox[c]{.85\textwidth}{
+					\centering
+						\parbox[c]{.85\textwidth}{
+							\textit{``#1''}\hfill\textit{\tiny{\mbox{\citeauthor{#2}~\cite{#2}}}}
+						}
+				}
+			}
+	\end{center}
+}
+
+\newcommand{\todo}[1]{ % Inserts a TODO box
+	\begin{center}
+			\colorbox{yellow}{
+				\parbox[c]{.85\textwidth}{
+					\centering
+						\parbox[c]{.85\textwidth}{
+							\textsc{Todo: }\textit{#1}
+						}
+				}
+			}
+	\end{center}
+}

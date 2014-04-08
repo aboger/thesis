@@ -1,0 +1,86 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\input{settings.tex}
+
+\begin{document}
+
+	
+		\pgfdeclarelayer{all}
+        \pgfsetlayers{all,main}         
+               
+        \tikzstyle{round}=[def, rounded corners, minimum width=6em]
+        
+        \def \dist{1.4}  
+        
+\tikzset{
+  bighead/.style={
+    decoration={markings,mark=at position 1 with {\arrow[scale=1.5]{>}}},
+    postaction={decorate},
+    shorten >=0.4pt}}        
+        
+        
+        \begin{tikzpicture}
+
+            \node (tm) {};  
+            
+            \node (m1) [below=.25*\dist] at (tm) {};   
+            \node [round] (target) at (m1) {Some};   
+            
+            \node (m2) [below=\dist] at (m1) {};   
+            \node [round] (yasand) [left=\dist] at (m2) {fancy};   
+            \node [round] (yasandimpl) [right=\dist] at (m2) {and};   
+            
+            \node (m3) [below=\dist] at (m2) {};   
+            \node [round] (yasdp) [left=2.5*\dist] at (m3) {even};   
+            \node [round] (yasaimpl) [right=2.5*\dist] at (m3) {more};   
+            
+            \node (m4) [below=\dist] at (m3) {};   
+            \node [round] (yasa) [left=2*\dist] at (m4) {fancy};   
+            \node [round] (yasdpimpl) [right=2*\dist] at (m4) {boxes};  
+             
+            \node (m5) [below=.975*\dist] at (m4) {}; 
+            \node (l1) [left=2*\dist] at (m5) {};  
+            \node (l2) [left=0.75*\dist] at (m5) {};  
+            \node (l3) [right=0.75*\dist] at (m5) {};  
+            \node (l4) [right=2*\dist] at (m5) {};
+            
+            \node (m6) [below=.0125*\dist] at (m5) {};   
+            \node (bl) [left=4*\dist] at (m6) {};   
+            \node (br) [right=4*\dist] at (m6) {};      
+            \node (offset) [right=.325*\dist] at (br) {};             
+            
+            \node (tl) at (bl |- tm) {};
+            \node (tr) at (br |- tm) {};
+             
+	        \path [draw, bighead] (target) -- (yasand); 
+	        \path [draw, bighead] (target) -- (yasandimpl); 
+	        
+	        \path [draw, bighead] (yasand) -- (yasdp); 
+	        \path [draw, dotted, bighead] (yasand) -- (yasa); 
+	        
+	        \path [draw, dotted, bighead] (yasdp) -- (yasa); 
+	        
+	        \path [draw, dashed, bighead] (yasandimpl) -- (yasand); 
+	        \path [draw, bighead] (yasandimpl) -- (yasdp); 
+	        \path [draw, bighead] (yasandimpl) -- (yasa); 
+	        \path [draw, bighead] (yasandimpl) -- (yasdpimpl); 
+	        \path [draw, bighead] (yasandimpl) -- (yasaimpl); 
+	        
+	        \path [draw, bighead] (yasaimpl) -- (yasdp); 
+	        \path [draw, bighead] (yasaimpl) -- (yasdpimpl); 
+	        \path [draw, dashed, bighead] (yasaimpl) -- (yasa); 
+	        
+	        \path [draw, dashed, bighead] (yasdpimpl) -- (yasdp); 
+	        
+	        \path [draw, dashed, bighead] (l1) -- node [above] {Some} (l2); 
+	        \path [draw, dotted, bighead] (l2) -- node [above] {fancy} (l3); 
+	        \path [draw, bighead] 		   (l3) -- node [above] {arrows} (l4); 
+            
+            \begin{pgfonlayer}{all}
+                \path[rounded corners, draw=black, fill=gray!10] (tl) rectangle (br);    
+            \end{pgfonlayer}        
+        
+        \end{tikzpicture}
+
+\end{document}
