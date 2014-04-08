@@ -1,7 +1,7 @@
 Thesis template
 ===
 
-A PDFLaTeX template for a scientific thesis. Works fine with [Texmaker](http://www.xm1math.net/texmaker/)s.
+A PDFLaTeX template for a scientific thesis. Works fine with [Texmaker](http://www.xm1math.net/texmaker/).
 
 The following commands install required software, download the template source code and build an example PDF file:
 
@@ -14,4 +14,4 @@ The following commands install required software, download the template source c
 
 ---
 
- Alexander Boger
+Alexander Boger
